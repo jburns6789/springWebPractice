@@ -19,6 +19,8 @@ public class Book {
         @JoinColumn(name = "author_id"))
     //JPA mapping
 
+    //--------------------------------
+
     private Set<Author> authors = new HashSet<>();
     //Java mapping
 
@@ -29,6 +31,22 @@ public class Book {
     public void setAuthors(java.util.Set<Author> authors) {
         this.authors = authors;
     }
+
+    //--------------------------------
+
+    @ManyToOne
+    private Publisher publisher;
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
+    }
+
+    //--------------------------------
+
 
     public Long getId() {
         return id;
