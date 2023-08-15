@@ -2,6 +2,7 @@ package practice.springWebPractice.domain;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -18,7 +19,7 @@ public class Book {
         @JoinColumn(name = "author_id"))
     //JPA mapping
 
-    private Set<Author> authors;
+    private Set<Author> authors = new HashSet<>();
     //Java mapping
 
     public java.util.Set<Author> getAuthors() {

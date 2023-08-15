@@ -2,6 +2,7 @@ package practice.springWebPractice.domain;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -16,9 +17,10 @@ public class Author {
     @ManyToMany(mappedBy = "authors")
     //JPA mapping many authors to many books
 
-    private Set<Book> books;
+    private Set<Book> books = new HashSet<>();
     //Java mapping
     //you want to use a set, you could use a list but a list allows for duplicate elements, set is preferred
+    //needs to be initialized or you will get a null pointer exception
 
     public java.util.Set<Book> getBooks() {
         return books;
