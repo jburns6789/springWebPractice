@@ -47,6 +47,10 @@ public class BootstrapData implements CommandLineRunner {
         ericSaved.getBooks().add(dddSaved);
         rodSaved.getBooks().add(bseSaved);
 
+        authorRepository.save(ericSaved);
+        authorRepository.save(rodSaved);
+        //persisted the book relationship
+
         System.out.println("In bootstrap");
         System.out.println("Author Count:" + authorRepository.count());
         System.out.println("Book Count:" + bookRepository.count());
